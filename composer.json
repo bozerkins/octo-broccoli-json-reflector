@@ -1,0 +1,19 @@
+{
+  "name": "bozerkins/octo-broccoli-json-reflector",
+  "description": "",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bogdans Ozerkins",
+      "email": "b.ozerkins@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"OctoBroccoli\\": "src/"}
+  },
+  "require": {
+    "phpunit/phpunit": "4.8.21",
+    "symfony/var-dumper": "v2.8.2"
+  }
+}
