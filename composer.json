@@ -10,7 +10,7 @@
     }
   ],
   "autoload": {
-    "psr-4": {"OctoBroccoli\\": "src/"}
+    "psr-4": {"OctoBroccoli\\": "src/OctoBroccoli/"}
   },
   "require": {
     "phpunit/phpunit": "4.8.21",
