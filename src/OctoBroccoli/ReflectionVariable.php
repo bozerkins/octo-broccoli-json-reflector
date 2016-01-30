@@ -8,12 +8,7 @@
 
 namespace OctoBroccoli;
 
-/**
- * <b>Reflector</b> is an interface implemented by all
- * exportable Reflection classes.
- * @link http://php.net/manual/en/class.reflector.php
- */
-class ReflectionVariable implements \Reflector
+class ReflectionVariable implements ReflectionVariableInterface
 {
     private static $types = array(
         'string',
@@ -85,7 +80,7 @@ class ReflectionVariable implements \Reflector
         }
     }
 
-    public function getInternalType()
+    private function getInternalType()
     {
         if (is_null($this->internalType)) {
             $this->internalType = gettype($this->getValue());
@@ -154,27 +149,5 @@ class ReflectionVariable implements \Reflector
     public function isAtomic()
     {
         return in_array($this->getType(), self::$typesAtomic);
-    }
-
-    /**
-     * Exports
-     * @link http://php.net/manual/en/reflector.export.php
-     * @return string
-     * @since 5.0
-     */
-    static function export()
-    {
-        // TODO: Implement export() method.
-    }
-
-    /**
-     * To string
-     * @link http://php.net/manual/en/reflector.tostring.php
-     * @return string
-     * @since 5.0
-     */
-    function __toString()
-    {
-        // TODO: Implement __toString() method.
     }
 }

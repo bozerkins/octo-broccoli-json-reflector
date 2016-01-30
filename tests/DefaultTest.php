@@ -8,20 +8,6 @@
  */
 class DefaultTest extends PHPUnit_Framework_TestCase
 {
-    public function testSingleLevelJson()
-    {
-        $phpStructure = array();
-        $phpStructure['id'] = 1522;
-        $phpStructure['name'] = 'default name';
-
-        $jsonStructure = json_encode($phpStructure);
-
-//        dump($phpStructure);
-//        dump($jsonStructure);
-
-        return $jsonStructure;
-    }
-
     public function testInteger()
     {
         $variable = 15;
