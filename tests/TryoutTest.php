@@ -15,7 +15,7 @@ class TryoutTest extends PHPUnit_Framework_TestCase
 
         $record = array();
         $record['id'] = 15;
-        $record['name'] = $faker->name;;
+        $record['name'] = $faker->name;
         $record['title'] = $faker->title;
         $record['address'] = $faker->address;
         $record['phone'] = $faker->phoneNumber;
@@ -33,9 +33,14 @@ class TryoutTest extends PHPUnit_Framework_TestCase
             )
         );
 
+        $decode = json_decode(json_encode($record));
+
         $reflection = new \OctoBroccoli\ReflectionVariable($record);
         dump($reflection);
         dump($reflection->getChildren());
 
+        $structure = new \OctoBroccoli\ReflectionJsonStructure();
+        $reflection = $structure->generateReflection($decode);
+        dump($reflection);
     }
 }

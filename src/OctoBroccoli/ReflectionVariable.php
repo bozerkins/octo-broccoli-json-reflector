@@ -8,7 +8,12 @@
 
 namespace OctoBroccoli;
 
-class ReflectionVariable implements ReflectionVariableInterface
+/**
+ * Class ReflectionVariable
+ * @package OctoBroccoli
+ * @deprecated
+ */
+class ReflectionVariable
 {
     private static $types = array(
         'string',
