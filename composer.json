@@ -13,8 +13,10 @@
     "psr-4": {"OctoBroccoli\\": "src/OctoBroccoli/"}
   },
   "require": {
-    "phpunit/phpunit": "4.8.21",
-    "symfony/var-dumper": "v2.8.2",
     "fzaninotto/faker": "v1.5.0"
+  },
+  "require-dev" : {
+    "phpunit/phpunit": "4.8.21",
+    "symfony/var-dumper": "v2.8.2"
   }
 }
