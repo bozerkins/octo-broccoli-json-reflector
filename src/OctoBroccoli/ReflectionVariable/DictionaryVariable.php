@@ -13,6 +13,10 @@ use OctoBroccoli\ReflectionStructureInterface;
 
 class DictionaryVariable implements ReflectionVariableInterface
 {
+    /**
+     * @param $variable
+     * @return bool
+     */
     public static function test($variable)
     {
         if (!is_object($variable)) {
@@ -28,8 +32,16 @@ class DictionaryVariable implements ReflectionVariableInterface
         return false;
     }
 
+    /**
+     * @var ReflectionVariableInterface[]
+     */
     private $variable;
 
+    /**
+     * DictionaryVariable constructor.
+     * @param $variable
+     * @param ReflectionStructureInterface $structure
+     */
     public function __construct($variable, ReflectionStructureInterface $structure)
     {
         $this->variable = array();
@@ -38,16 +50,25 @@ class DictionaryVariable implements ReflectionVariableInterface
         }
     }
 
+    /**
+     * @return ReflectionVariableInterface[]
+     */
     public function getVariable()
     {
         return $this->variable;
     }
 
+    /**
+     * @return int
+     */
     public function getLength()
     {
         return count($this->variable);
     }
 
+    /**
+     * @return bool
+     */
     public function isSimple()
     {
         return false;

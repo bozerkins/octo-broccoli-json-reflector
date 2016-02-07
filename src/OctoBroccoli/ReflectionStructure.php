@@ -9,6 +9,8 @@
 namespace OctoBroccoli;
 
 
+use OctoBroccoli\ReflectionVariable\ReflectionVariableInterface;
+
 class ReflectionStructure implements ReflectionStructureInterface
 {
     /**
@@ -16,11 +18,19 @@ class ReflectionStructure implements ReflectionStructureInterface
      */
     private $registrations = array();
 
+    /**
+     * @param $name
+     * @param ReflectionRegistration $registration
+     */
     public function register($name, ReflectionRegistration $registration)
     {
         $this->registrations[$name] = $registration;
     }
 
+    /**
+     * @param $variable
+     * @return null|ReflectionVariableInterface
+     */
     public function generateReflection($variable)
     {
         foreach($this->registrations as $registration) {

@@ -9,9 +9,19 @@
 namespace OctoBroccoli;
 
 
+use OctoBroccoli\ReflectionVariable\ReflectionVariableInterface;
+
 interface ReflectionStructureInterface
 {
+    /**
+     * @param $name
+     * @param ReflectionRegistration $registration
+     */
     public function register($name, ReflectionRegistration $registration);
 
+    /**
+     * @param $variable
+     * @return ReflectionVariableInterface
+     */
     public function generateReflection($variable);
 }

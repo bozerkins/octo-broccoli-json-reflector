@@ -13,13 +13,31 @@ use OctoBroccoli\ReflectionStructureInterface;
 
 interface ReflectionVariableInterface
 {
+    /**
+     * @param $variable
+     * @return bool
+     */
     public static function test($variable);
 
+    /**
+     * ReflectionVariableInterface constructor.
+     * @param $variable
+     * @param ReflectionStructureInterface $structure
+     */
     public function __construct($variable, ReflectionStructureInterface $structure);
 
+    /**
+     * @return mixed|null
+     */
     public function getVariable();
 
+    /**
+     * @return int|null
+     */
     public function getLength();
 
+    /**
+     * @return bool
+     */
     public function isSimple();
 }
